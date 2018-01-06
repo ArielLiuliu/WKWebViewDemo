@@ -30,6 +30,8 @@
     self.webForeGroundColor = @"#0D1931";
     self.webBackGroundColor = @"#E9E9E0";
     
+    self.fontSize = 100;//设置网页字体
+    
     //请求网求html脚本
     [self sessionToGetRequest];
 }
@@ -95,6 +97,12 @@
     //修改网页背景色
     script2 = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.background='%@'", self.webBackGroundColor];
     [webView evaluateJavaScript:script2 completionHandler:^(id wid, NSError * _Nullable error) {}];//#0D1931表示十六进制颜色，可以与RGB互转
+#endif
+    
+#if 1
+    //修改网页里字体的大小
+    NSString *script = [NSString stringWithFormat:@"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '%d%%'", self.fontSize];
+    [webView evaluateJavaScript:script completionHandler:^(id wid, NSError * _Nullable error) {}];
 #endif
     
 #if 1

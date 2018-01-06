@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString *content;//保存网页内容
 @property (nonatomic, strong) NSString *webForeGroundColor;//网页前景色
 @property (nonatomic, strong) NSString *webBackGroundColor;//网页背景色
+@property (nonatomic) int fontSize;//网页字体大小
 
 @end
 
